@@ -64,7 +64,37 @@ p {
   list-style: none;
 }
 
+.header__item {
+  font-size: var(--fs-preset-4);
+  line-height: var(--lh-preset-4);
+  letter-spacing: var(--ls-preset-4);
+  font-weight: var(--fw-regular);
+}
+
+.header__item a {
+  text-decoration: none;
+  color: var(--navy-950);
+}
+
+.header__menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 2rem;
+  width: 4rem;
+  background-color: var(--white);
+  border: none;
+}
+
+.header__hamburger-line {
+  height: 3px;
+  border: 2px solid black;
+}
+
 .header__nav-close-btn {
+  font-size: var(--fs-preset-1);
+  background-color: transparent;
+  border: none;
   align-self: flex-end;
 }
 
