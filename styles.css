@@ -44,12 +44,12 @@ p {
   height: 100vh;
   width: 300px;
   transform: translateX(100%);
-  transition: transform ease 0.3s;
-  background-color: antiquewhite;
+  background-color: var(--white);
   padding: 1.75rem 2.25rem;
   display: flex;
   flex-direction: column;
   gap: 5.5rem;
+  z-index: 10;
 }
 
 /* When nav is active it will slide in from the right */
@@ -74,6 +74,11 @@ p {
 .header__item a {
   text-decoration: none;
   color: var(--navy-950);
+
+  &:hover,
+  &:focus {
+    color: var(--red-500);
+  }
 }
 
 .header__menu-btn {
@@ -96,6 +101,22 @@ p {
   background-color: transparent;
   border: none;
   align-self: flex-end;
+}
+
+/* Overlay takes the whole screen and is fixed to viewport - initially it's hidden */
+.header__nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--navy-950);
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity ease-in 0.3s;
+}
+
+.header__nav-overlay--active {
+  opacity: 0.5;
+  visibility: visible;
 }
 
 .main {
@@ -215,12 +236,28 @@ p {
   gap: 0.5rem;
 }
 
+.news-list__title a {
+  text-decoration: none;
+  color: var(--navy-950);
+
+  &:hover,
+  &:focus {
+    color: var(--red-500);
+  }
+}
+
 .news-list__text {
   color: var(--navy-600);
 }
 
 /* Tablet Media Queries */
 @media (min-width: 48rem) {
+  .aside {
+    padding: 2rem 2.5rem;
+  }
+}
+
+@media (min-width: 90rem) {
   /* Menu Button does not show on tablet screens and above */
   .header__menu-btn {
     display: none;
@@ -244,12 +281,6 @@ p {
   /* Remove the close button on large screens */
   .header__nav-close-btn {
     display: none;
-  }
-}
-
-@media (min-width: 48rem) {
-  .aside {
-    padding: 2rem 2.5rem;
   }
 }
 
