@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Inter";
+  src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --grey-300: #c5c6ce;
+  --grey-200: #d8d8d8;
+  --navy-950: #00001a;
+  --navy-600: #5e607a;
+  --gold-400: #e9aa52;
+  --red-500: #f15d51;
+
+  --spacing-100: 0.5rem; /* 8px  */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-800: 4rem; /* 64px */
+  --spacing-1100: 5.5rem; /* 88px */
+
+  /* Text Preset 1 - Inter Extra Bold */
+  --fs-preset-1: 3.5rem;
+  --lh-preset-1: 1;
+  --ls-preset-1: 0;
+
+  /* Text Preset 2 - Inter Extra Bold */
+  --fs-preset-2: 2.5rem;
+  --lh-preset-2: 1;
+  --ls-preset-2: 0;
+
+  /* Text Preset 3 - Inter Bold */
+  --fs-preset-3: 2rem;
+  --lh-preset-3: 1;
+  --ls-preset-3: 0;
+
+  /* Text Preset 4 - Inter Extra Bold */
+  --fs-preset-4: 1.25rem;
+  --lh-preset-4: 1.2;
+  --ls-preset-4: 0;
+
+  /* Text Preset 5 - Inter Extra Bold */
+  --fs-preset-5: 1.125rem;
+  --lh-preset-5: 1.333;
+  --ls-preset-5: 0;
+
+  /* Text Preset 6 - Inter Regular */
+  --fs-preset-6: 0.9375rem;
+  --lh-preset-6: 1.733;
+  --ls-preset-6: 0;
+
+  /* Text Preset 7 - Inter Bold */
+  --fs-preset-7: 0.875rem;
+  --lh-preset-7: 1.714;
+  --ls-preset-7: 0.27375rem;
+
+  --fw-extrabold: 800;
+  --fw-bold: 700;
+  --fw-regular: 400;
+
+  /* SEMANTIC FONT VARIABLES*/
+  /*  HERO HEADER */
+  --fs-hero-header: var(--fs-preset-2);
+  --lh-hero-header: var(--lh-preset-2);
+  --ls-hero-header: var(--ls-preset-2);
+
+  /* HERO LINK */
+  --fs-hero-link: var(--fs-preset-7);
+  --lh-hero-link: var(--lh-preset-7);
+  --ls-hero-link: var(--ls-preset-7);
+
+  /* PARAGRAPH TEXT */
+  --fs-paragraph: var(--fs-preset-6);
+  --lh-paragraph: var(--lh-preset-6);
+  --ls-paragraph: var(--ls-preset-6);
+
+  /* ASIDE TITLE */
+  --fs-aside-title: var(--fs-preset-3);
+  --lh-aside-title: var(--lh-preset-3);
+  --ls-aside-title: var(--ls-preset-3);
+
+  /* ASIDE ITEM TITLE */
+  --fs-item-title: var(--fs-preset-4);
+  --lh-item-title: var(--lh-preset-4);
+  --ls-item-title: var(--ls-preset-4);
+
+  /* ARTICLE LIST NUMBER */
+  --fs-list-number: var(--fs-preset-3);
+  --lh-list-number: var(--lh-preset-3);
+  --ls-list-number: var(--ls-preset-3);
+
+  /* ARTICLE LIST TITLE */
+  --fs-list-title: var(--fs-preset-5);
+  --lh-list-title: var(--lh-preset-5);
+  --ls-list-title: var(--ls-preset-5);
+}
+@media (min-width: 48rem) {
+  :root {
+    --fs-hero-header: var(--fs-preset-1);
+    --lh-hero-header: var(--lh-preset-1);
+    --ls-hero-header: var(--ls-preset-1);
+  }
+}

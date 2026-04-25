@@ -1,0 +1,259 @@
+@import url("reset.css");
+@import url("variables.css");
+
+body {
+  max-width: 1300px;
+  padding: 1.75rem 1rem;
+  font-family: "Inter";
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  /* overflow-x: hidden; */
+}
+@media (min-width: 768px) {
+  body {
+    padding: 1.75rem 5rem;
+  }
+}
+
+/* Global paragraph sizing */
+p {
+  font-size: var(--fs-paragraph);
+  line-height: var(--lh-paragraph);
+  letter-spacing: var(--ls-paragraph);
+  font-weight: var(--fw-regular);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header__logo {
+  width: 4rem;
+  height: 2.5rem;
+}
+
+/* Default Mobile styles: Nav is off screen to the right */
+.header__nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  transform: translateX(100%);
+  transition: transform ease 0.3s;
+  background-color: antiquewhite;
+  padding: 1.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+}
+
+/* When nav is active it will slide in from the right */
+.header__nav--active {
+  transform: translateX(0);
+}
+
+.header__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.header__nav-close-btn {
+  align-self: flex-end;
+}
+
+.main {
+  display: grid;
+  gap: 4rem;
+}
+
+.hero__img {
+  margin-bottom: 1.5rem;
+}
+
+.hero__heading {
+  font-size: var(--fs-hero-header);
+  line-height: var(--lh-hero-header);
+  letter-spacing: var(--ls-hero-header);
+  font-weight: var(--fw-extrabold);
+}
+
+/* Update on media query */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Update using media query */
+.hero__text {
+  margin-bottom: 1.5rem;
+  color: var(--navy-600);
+}
+
+/* Update link style and text */
+.hero__link {
+  font-size: var(--fs-hero-link);
+  line-height: var(--lh-hero-link);
+  letter-spacing: var(--ls-hero-link);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  color: var(--navy-950);
+  display: inline-block;
+  height: 3rem;
+  width: 11.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--red-500);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--navy-950);
+}
+
+.aside__title {
+  color: var(--gold-400);
+  font-size: var(--fs-aside-title);
+  line-height: var(--lh-aside-title);
+  letter-spacing: var(--ls-aside-title);
+  font-weight: var(--fw-bold);
+}
+
+.aside__item-title {
+  color: var(--white);
+  font-size: var(--fs-item-title);
+  line-height: var(--lh-aside-title);
+  letter-spacing: var(--ls-aside-title);
+  font-weight: var(--fw-extrabold);
+  margin-bottom: 0.5rem;
+}
+
+.aside__item-text {
+  color: var(--grey-300);
+}
+
+/* Styling divider in the aside */
+.aside__divider {
+  border: 0;
+  border-top: 1px solid var(--navy-600);
+}
+
+.news-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.news-list__item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.news-list__img {
+  width: 6.25rem;
+}
+
+.news-list__number {
+  font-size: var(--fs-list-number);
+  line-height: var(--lh-list-number);
+  letter-spacing: var(--ls-list-number);
+  font-weight: var(--fw-extrabold);
+  color: var(--red-500);
+}
+
+.new-list__title {
+  font-size: var(--fs-list-title);
+  line-height: var(--lh-list-title);
+  letter-spacing: var(--ls-list-title);
+  font-weight: var(--fw-extrabold);
+  color: var(--navy-950);
+}
+
+.news-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.news-list__text {
+  color: var(--navy-600);
+}
+
+/* Tablet Media Queries */
+@media (min-width: 48rem) {
+  /* Menu Button does not show on tablet screens and above */
+  .header__menu-btn {
+    display: none;
+  }
+
+  /* Remove nav styless to fit normal document flow */
+  .header__nav {
+    position: static;
+    height: auto;
+    width: fit-content;
+    transition: none;
+    transform: none;
+    padding: 0;
+  }
+
+  /* Make the list flex row */
+  .header__list {
+    flex-direction: row;
+  }
+
+  /* Remove the close button on large screens */
+  .header__nav-close-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 48rem) {
+  .aside {
+    padding: 2rem 2.5rem;
+  }
+}
+
+/* Desktop media query */
+@media (min-width: 90rem) {
+  .header {
+    margin-bottom: 4rem;
+  }
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .hero {
+    grid-column: 1 / 3;
+  }
+
+  .hero__content {
+    flex-direction: row;
+  }
+
+  .hero__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .aside {
+    padding: 2rem 1.5rem;
+  }
+
+  .news-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1 / 4;
+    margin-top: 2rem;
+  }
+}
