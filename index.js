@@ -5,19 +5,30 @@ const navOverlay = document.querySelector(".header__nav-overlay");
 const mainElement = document.querySelector(".main");
 
 function closeMenu() {
+  // Remove classes to hide nav
   menu.classList.remove("header__nav--active");
   navOverlay.classList.remove("header__nav-overlay--active");
   // Remove focus trap listener when closed
   document.removeEventListener("keydown", trapFocus);
+  // A11y
   menuBtn.setAttribute("aria-expanded", "false");
+  menu.setAttribute("aria-hidden", "true");
+
+  // Return focus back to menu button on close
+  menuBtn.focus();
 }
 
 function openMenu() {
+  // A11y
+  menu.setAttribute("aria-hidden", "false");
+  menuBtn.setAttribute("aria-expanded", "true");
+
+  // Add classes for nav to be visible
   menu.classList.add("header__nav--active");
-  navOverlay.classList.toggle("header__nav-overlay--active");
+  navOverlay.classList.add("header__nav-overlay--active");
+
   // Add focus trap listener
   document.addEventListener("keydown", trapFocus);
-  menuBtn.setAttribute("aria-expanded", "true");
 
   // Focus the first link on opening the nav
   const firstLink = menu.querySelector(".header__list a");
@@ -36,7 +47,7 @@ closeBtn.addEventListener("click", () => {
 
 // Ensuring the nav closes when resizing to larger screens
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 1440) {
+  if (window.innerWidth >= 1440) {
     closeMenu();
   }
 });
