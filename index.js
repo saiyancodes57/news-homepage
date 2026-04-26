@@ -9,6 +9,7 @@ function closeMenu() {
   navOverlay.classList.remove("header__nav-overlay--active");
   // Remove focus trap listener when closed
   document.removeEventListener("keydown", trapFocus);
+  menuBtn.setAttribute("aria-expanded", "false");
 }
 
 function openMenu() {
@@ -16,6 +17,7 @@ function openMenu() {
   navOverlay.classList.toggle("header__nav-overlay--active");
   // Add focus trap listener
   document.addEventListener("keydown", trapFocus);
+  menuBtn.setAttribute("aria-expanded", "true");
 
   // Focus the first link on opening the nav
   const firstLink = menu.querySelector(".header__list a");
@@ -65,7 +67,7 @@ function trapFocus(e) {
     first.focus();
   }
 
-  // SHIFT + TAB backward: but if equal to first, shift focus to last element
+  // SHIFT + TAB backward:  if equal to first, shift focus to last element (i.e., loop back around)
   if (isShift && active === first) {
     e.preventDefault();
     last.focus();

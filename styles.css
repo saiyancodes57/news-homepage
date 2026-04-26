@@ -24,6 +24,23 @@ p {
   font-weight: var(--fw-regular);
 }
 
+/* Skip link styling at the top of the page for a11y */
+.body__skip-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.body__skip-link:focus {
+  transform: translateY(0);
+}
+
 .header {
   display: flex;
   justify-content: space-between;

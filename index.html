@@ -8,14 +8,15 @@
     <title>News Homepage</title>
   </head>
   <body>
+    <a href="#main" class="body__skip-link">Skip to main content</a>
     <header class="header">
       <img src="./images/logo.svg" class="header__logo" alt="Company logo" />
-      <nav class="header__nav">
-        <button class="header__nav-close-btn">
-          <img
-            src="./images/icon-menu-close.svg"
-            alt="Close navigation menu button"
-          />
+      <nav class="header__nav" id="primary-nav">
+        <button
+          class="header__nav-close-btn"
+          aria-label="Close navigation menu"
+        >
+          <img src="./images/icon-menu-close.svg" alt="" />
         </button>
         <ul class="header__list">
           <li class="header__item"><a href="#">Home</a></li>
@@ -27,12 +28,17 @@
           <li class="header__item"><a href="#">Categories</a></li>
         </ul>
       </nav>
-      <div class="header__nav-overlay"></div>
-      <button class="header__menu-btn">
-        <img src="./images/icon-menu.svg" alt="Open navigation menu button" />
+      <div class="header__nav-overlay" aria-hidden="true"></div>
+      <button
+        class="header__menu-btn"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open navigation menu"
+      >
+        <img src="./images/icon-menu.svg" alt="" />
       </button>
     </header>
-    <main class="main">
+    <main class="main" id="main">
       <article class="hero">
         <picture>
           <source
@@ -84,7 +90,7 @@
         <article class="news-list__item">
           <img
             src="./images/image-retro-pcs.jpg"
-            alt=""
+            alt="Retro desktop computer setup"
             class="news-list__img"
           />
           <div class="news-list__content">
@@ -99,7 +105,7 @@
         <article class="news-list__item">
           <img
             src="./images/image-top-laptops.jpg"
-            alt=""
+            alt="Laptop keyboard keys"
             class="news-list__img"
           />
           <div class="news-list__content">
@@ -116,7 +122,7 @@
         <article class="news-list__item">
           <img
             src="./images/image-gaming-growth.jpg"
-            alt=""
+            alt="Games console controller"
             class="news-list__img"
           />
           <div class="news-list__content">
